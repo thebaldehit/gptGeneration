@@ -1,5 +1,6 @@
 <script>
-  import Token from "./components/Token.svelte";
+  import Token from './components/Token.svelte';
+  import Generator from './components/Generator.svelte';
 
   let token = localStorage.getItem('OpenAIToken');
 
@@ -29,7 +30,8 @@
 
 <div class="container">
   {#if token}
+    <Generator token={token} />
   {:else}
-    <Token buttonHandler={verifyToken}/>
+    <Token buttonHandler={verifyToken} />
   {/if}
 </div>
